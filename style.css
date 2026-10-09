@@ -870,10 +870,13 @@ body {
 /* Photo Mode Selector Dots Below Card */
 .photo-mode-selector {
   position: absolute;
-  bottom: -46px;
+  bottom: -48px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 10px;
   z-index: 4;
+  white-space: nowrap;
 }
 
 .mode-pill {
