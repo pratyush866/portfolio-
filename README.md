@@ -9,6 +9,7 @@ Official repository for **portfolio-** — the executive personal space of **Pra
 - **Flagship Ventures Showcase:**
   - **Kisan Market (किसान मार्केट):** 0% commission direct digital agricultural exchange with Sarvam AI Indian vernacular voice navigation, FastAPI microservices, and Razorpay escrow.
   - **Shaadi Ram Ghar Jode (शादी राम घर जोड़े):** Premier authentic Vedic Matrimony & Certified Gurukul Purohit booking ecosystem with 36-Guna Ashtakoota Milan algorithm and zero-brokerage matching.
+  - **Travel Market (ट्रैवल मार्केट):** 100% toll-inclusive intercity cab exchange & direct driver trust network powered by React 19, Supabase PostgreSQL, and algorithmic corridor fare engine.
 - **Kisan Bio-Particle Spark Engine:** 60 FPS HTML5 Canvas simulation of golden wheat harvest embers following cursor movement.
 - **AI Executive Voice Briefing:** Integrated Web Speech API speech synthesis narrating the Founder & CEO mission statement.
 - **Dual-Perspective Executive Switcher:** Smooth crossfade toggling between Formal Executive Mode and Founder Mode.
