@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pratyush Mishra | Founder & CEO — Kisan Market | AgriTech Pioneer</title>
+  <meta name="description" content="Official Executive Portfolio of Pratyush Mishra - Founder & CEO of Kisan Market. Transforming agriculture through full-stack software, Sarvam AI voice ecosystems, and zero-brokerage trading.">
+  <meta name="keywords" content="Pratyush Mishra, Founder CEO, Kisan Market, AgriTech Innovator, Next.js, Python FastAPI, Executive Portfolio">
+  <meta name="author" content="Pratyush Mishra">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Pratyush Mishra | Founder & CEO — Kisan Market">
+  <meta property="og:description" content="Official Portfolio of Pratyush Mishra. AgriTech Pioneer, Full-Stack Architect, and Founder & CEO of Kisan Market.">
+  <meta property="og:image" content="./assets/profile-ceo.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/profile.png">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Golden-Emerald Bio-Flame Canvas -->
+  <canvas id="fireTrailCanvas"></canvas>
+
+  <!-- Ambient Glowing Orbs (Kisan Market Emerald & Golden Wheat) -->
+  <div class="ambient-glow glow-emerald"></div>
+  <div class="ambient-glow glow-gold"></div>
+  <div class="ambient-glow glow-cyber"></div>
+
+  <!-- Cybernetic Grid Overlay -->
+  <div class="grid-overlay"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-badge-kisan">🌾 KISAN MARKET</span>
+        <span class="brand-name">Pratyush Mishra</span>
+        <span class="brand-title-tag">CEO</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-link">Vision</a>
+        <a href="#projects" class="nav-link">Ventures & Tech</a>
+        <a href="#skills" class="nav-link">Stack</a>
+        <a href="#leadership" class="nav-link">Leadership</a>
+        <a href="#internships" class="nav-link">Internships</a>
+        <a href="#achievements" class="nav-link">Credentials</a>
+        <a href="#contact" class="nav-link">Connect</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- AI Voice Briefing Quick Trigger -->
+        <button class="ai-voice-btn" id="voiceTriggerBtn" title="Play AI Executive Voice Briefing">
+          <div class="voice-icon-wrap">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+          </div>
+          <span class="voice-btn-text" id="voiceBtnText">Executive Voice</span>
+          <div class="audio-equalizer" id="audioEqualizer">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+          </div>
+        </button>
+
+        <a href="./assets/Pratyush_Mishra_Resume.pdf" download="Pratyush_Mishra_Resume.pdf" class="btn btn-sm btn-outline">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>CV / Dossier</span>
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-container">
+      
+      <div class="hero-content">
+        
+        <div class="kisan-pill">
+          <span class="wheat-icon">🌾</span>
+          <span class="pill-title">Founder & CEO</span>
+          <span class="pill-sep">•</span>
+          <span class="pill-sub">Kisan Market (किसान मार्केट)</span>
+        </div>
+
+        <h1 class="hero-title">
+          Pratyush <span class="gradient-kisan">Mishra</span>
+        </h1>
+
+        <div class="typewriter-container">
+          <span class="typewriter-prefix">&gt; </span>
+          <span class="typewriter-text" id="typewriter"></span>
+          <span class="typewriter-cursor">_</span>
+        </div>
+
+        <p class="hero-bio">
+          Technologist, AgriTech Pioneer, and Full-Stack Architect. Revolutionizing Indian agriculture with sovereign zero-brokerage digital trade, <strong>Sarvam AI Vernacular Voice</strong>, and high-concurrency microservices powered by <strong>Next.js 14 and Python FastAPI</strong>.
+        </p>
+
+        <!-- Executive Voice Player Card -->
+        <div class="voice-card-interactive" id="voiceCard">
+          <div class="voice-card-left">
+            <div class="ai-avatar-pulse">
+              <span class="ai-dot"></span>
+            </div>
+            <div>
+              <span class="voice-card-label">EXECUTIVE AUDIO BRIEFING • AI VOICE</span>
+              <p class="voice-card-desc" id="voiceStatusText">Tap play to listen to Founder Pratyush's mission statement</p>
+            </div>
+          </div>
+          <button class="voice-play-control" id="voicePlayBtn" aria-label="Play Founder Speech">
+            <svg id="playIcon" class="icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <svg id="pauseIcon" class="icon hidden" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+          </button>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-kisan btn-lg">
+            <span>Explore Kisan Market & Ventures</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#contact" class="btn btn-glass btn-lg">
+            <span>Connect With Founder</span>
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/pratyush866" target="_blank" rel="noopener" class="social-link" title="GitHub">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/pratyush-mishra-5ba282373/" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="mailto:pratyushm866@gmail.com" class="social-link" title="Direct Email">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+          <span class="social-separator"></span>
+          <span class="social-location">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Uttar Pradesh, India
+          </span>
+        </div>
+
+      </div>
+
+      <!-- 3D Founder Portrait with Interactive Photo Switcher & Bio-Aura -->
+      <div class="hero-image-wrapper">
+        <div class="profile-card-3d" id="profileCard">
+          <div class="kisan-bio-aura"></div>
+          
+          <div class="profile-border" id="profileBorder" title="Click to Switch Look!">
+            
+            <!-- Dual Photo Slides -->
+            <div class="photo-slide-container">
+              <img src="./assets/profile.png" alt="Pratyush Mishra - Formal Executive" class="profile-img active" id="photo1">
+              <img src="./assets/profile-ceo.jpg" alt="Pratyush Mishra - Founder Mode" class="profile-img" id="photo2">
+            </div>
+
+            <!-- Interactive Click to Switch Hint -->
+            <div class="photo-switch-prompt" id="photoSwitchPrompt">
+              <span class="switch-icon">🔄</span>
+              <span class="switch-text" id="switchPromptText">Click photo to toggle look</span>
+            </div>
+
+            <!-- Founder Glass Badge -->
+            <div class="founder-glass-tag">
+              <span class="tag-star">🌾</span>
+              <span id="tagLookText">PRATYUSH MISHRA — FOUNDER & CEO</span>
+            </div>
+          </div>
+          
+          <!-- Photo Mode Selector Dots -->
+          <div class="photo-mode-selector">
+            <button class="mode-pill active" id="btnModeFormal">Formal Executive</button>
+            <button class="mode-pill" id="btnModeFounder">Founder & CEO Mode ⚡</button>
+          </div>
+
+          <div class="floating-badge badge-top-right">
+            <span class="badge-icon">🌾</span>
+            <div class="badge-text">
+              <span class="badge-title">Kisan Market</span>
+              <span class="badge-sub">0% Brokerage Trade</span>
+            </div>
+          </div>
+          
+          <div class="floating-badge badge-bottom-left">
+            <span class="badge-icon">🐘</span>
+            <div class="badge-text">
+              <span class="badge-title">PostgreSQL & Cloud</span>
+              <span class="badge-sub">Supabase Architect</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Executive Metrics Bar (Kisan Market Values) -->
+    <div class="container">
+      <div class="stat-bar">
+        <div class="stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+          </div>
+          <span class="stat-label">Direct Farmer Income (0% Brokerage)</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+          </div>
+          <span class="stat-label">Production Technologies Mastered</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="13">0</span><span class="stat-plus">+</span>
+          </div>
+          <span class="stat-label">Verified Credentials & Internships</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="99">0</span><span class="stat-plus">.9%</span>
+          </div>
+          <span class="stat-label">Uptime & Supply Chain Accuracy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder's Manifesto / Vision Section -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Vision & Agriculture Manifesto</span>
+        <h2 class="section-title">Empowering Bharat's Farmers Through Sovereign Code</h2>
+        <p class="section-subtitle">Bridging grassroots agricultural cultivators directly with nationwide institutional wholesale demand.</p>
+      </div>
+
+      <div class="manifesto-card glass-panel">
+        <div class="manifesto-quote-mark">“</div>
+        <blockquote class="manifesto-quote">
+          Technology reaches its highest moral purpose when it directly enriches the hands that grow our food. At Kisan Market, we engineered an AI-powered zero-commission exchange with vernacular Sarvam voice assistance — dismantling middleman exploitation and securing dignity for rural India's farming families.
+        </blockquote>
+        <div class="manifesto-author">
+          <div class="author-info">
+            <strong>Pratyush Mishra</strong>
+            <span>Founder & CEO, Kisan Market (किसान मार्केट) • Executive Director, SVM Academy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card glass-panel">
+          <div class="about-icon-box kisan-theme">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 0-7.54 16.58L12 22l7.54-3.42A10 10 0 0 0 12 2z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>0% Brokerage Agriculture Marketplace</h3>
+          <p>
+            Architected Kisan Market to solve multi-billion rupee rural freight and wholesale exploitation through automated e-Way billing, Razorpay escrow settlement, and multi-tier role dashboards.
+          </p>
+        </div>
+
+        <div class="about-card glass-panel">
+          <div class="about-icon-box gold-theme">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+          </div>
+          <h3>Full Stack Microservice Architecture</h3>
+          <p>
+            Engineered scalable cloud web backends using Next.js 14 App Router, Python FastAPI REST endpoints, and PostgreSQL on Supabase with row-level security for high-volume transactions.
+          </p>
+        </div>
+
+        <div class="about-card glass-panel">
+          <div class="about-icon-box cyber-theme">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <h3>Executive Institutional Leadership</h3>
+          <p>
+            Overseeing digital initiatives and organizational strategy as Executive Director at SVM Academy, directing institutional milestones and leading multi-disciplinary software teams.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Ventures & Projects Section -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Ventures & Software</span>
+        <h2 class="section-title">Production Ecosystems & Deployed Code</h2>
+        <p class="section-subtitle">Scalable, zero-downtime platforms engineered to serve real users and rural economies.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All Ecosystems</button>
+        <button class="filter-btn" data-filter="flagship">🌾 Kisan Market Flagship</button>
+        <button class="filter-btn" data-filter="ai">AI & Intelligence</button>
+        <button class="filter-btn" data-filter="cloud">Cloud Microservices</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Flagship: Kisan Market -->
+        <article class="project-card featured-flagship" data-category="flagship cloud">
+          <div class="flagship-badge">🌾 FLAGSHIP AGRI-TECH VENTURE</div>
+          <div class="project-inner">
+            <div class="project-meta">
+              <span class="project-category">Full Stack Agriculture Exchange Platform</span>
+              <h3 class="project-title">Kisan Market (किसान मार्केट)</h3>
+              <p class="project-desc">
+                Architected and deployed India's premier 0% commission direct farmer-to-bulk-buyer digital trade exchange. Features role-based consoles for Farmers, Wholesale Traders, and Logistics Drivers, integrated Indian vernacular Text-to-Speech voice navigation (Sarvam AI), automated e-Way billing, and Razorpay escrow payments.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <strong>Role Architecture:</strong> Bespoke dashboards for Farmers, Bulk Traders, Logistics Drivers & Central Admins.
+                </div>
+                <div class="highlight-item">
+                  <strong>Sarvam AI Indian Speech:</strong> Vernacular Text-to-Speech voice guidance tailored for farmers across Indian states.
+                </div>
+                <div class="highlight-item">
+                  <strong>Fintech & Freight:</strong> Razorpay payments, dynamic GST e-Way bills, and real-time transit dispatch tracking.
+                </div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="tech-tag">Next.js 14</span>
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Python FastAPI</span>
+                <span class="tech-tag">Supabase (PostgreSQL)</span>
+                <span class="tech-tag">Sarvam AI (TTS)</span>
+                <span class="tech-tag">Razorpay</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">PWA</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://kisan-market-puce.vercel.app" target="_blank" rel="noopener" class="btn btn-kisan btn-sm">
+                  <span>Launch Platform Live</span>
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+                <a href="https://github.com/pratyush866" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                  <span>Source Code</span>
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-visual">
+              <div class="code-preview-window">
+                <div class="window-bar">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <span class="window-title">kisanmarket-architecture.config.ts</span>
+                </div>
+                <pre class="code-block"><code><span class="c-keyword">export const</span> <span class="c-var">KisanMarketArchitecture</span> = {
+  founder: <span class="c-string">"Pratyush Mishra"</span>,
+  mission: <span class="c-string">"0% Brokerage Direct Trade for Indian Farmers"</span>,
+  stack: {
+    frontend: <span class="c-string">"Next.js 14 App Router"</span>,
+    restServices: <span class="c-string">"Python FastAPI Microservices"</span>,
+    databaseCluster: <span class="c-string">"Supabase PostgreSQL + RLS"</span>,
+    vernacularEngine: <span class="c-string">"Sarvam AI Indian Voice TTS"</span>,
+    escrowGateway: <span class="c-string">"Razorpay Webhooks"</span>
+  },
+  status: <span class="c-string">"PRODUCTION_ACTIVE"</span>
+};</code></pre>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Kisan Guru AI -->
+        <article class="project-card glass-panel" data-category="ai flagship">
+          <div class="project-header">
+            <span class="project-category">Conversational Agri-AI</span>
+            <div class="project-status-dot online" title="Active Platform"></div>
+          </div>
+          <h3 class="project-title">Kisan Guru AI</h3>
+          <p class="project-desc">
+            Autonomous agricultural intelligence assistant utilizing Python and FastAPI to deliver personalized agronomic diagnosis, soil health forecasts, and localized climate alerts directly to cultivators.
+          </p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Generative AI</span>
+            <span class="tech-tag">Prompt Engineering</span>
+            <span class="tech-tag">Weather APIs</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/pratyush866" target="_blank" rel="noopener" class="link-arrow">
+              <span>View Codebase & Architecture</span>
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: GenAI Analytics -->
+        <article class="project-card glass-panel" data-category="ai">
+          <div class="project-header">
+            <span class="project-category">Enterprise Intelligence</span>
+            <span class="project-tag-badge">Tata / Forage</span>
+          </div>
+          <h3 class="project-title">GenAI Data Analytics Engine</h3>
+          <p class="project-desc">
+            Completed enterprise-grade AI analytics simulation translating massive commercial datasets into high-impact executive decision dashboards and predictive supply modeling.
+          </p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">Generative AI</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">Data Modeling</span>
+          </div>
+          <div class="project-links">
+            <a href="https://www.linkedin.com/in/pratyush-mishra-5ba282373/" target="_blank" rel="noopener" class="link-arrow">
+              <span>View Verified Credential</span>
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: Scalable Cloud Architecture -->
+        <article class="project-card glass-panel" data-category="cloud">
+          <div class="project-header">
+            <span class="project-category">Cloud Systems</span>
+            <span class="project-tag-badge">Obtains</span>
+          </div>
+          <h3 class="project-title">High-Concurrency Cloud Pipelines</h3>
+          <p class="project-desc">
+            Architected robust RESTful backends and modular Next.js frontend clients featuring role-based access control, relational database schema optimizations, and automated cloud deployments.
+          </p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">REST APIs</span>
+            <span class="tech-tag">Vercel/Render</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/pratyush866" target="_blank" rel="noopener" class="link-arrow">
+              <span>Inspect Systems</span>
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Competencies Section -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Core Arsenal</span>
+        <h2 class="section-title">Architectural Mastery & Stack</h2>
+        <p class="section-subtitle">Battle-tested tools and frameworks utilized to power Kisan Market and enterprise systems.</p>
+      </div>
+
+      <div class="skills-matrix">
+        
+        <!-- Frontend -->
+        <div class="skill-group glass-panel">
+          <div class="skill-group-header">
+            <div class="skill-icon-wrap emerald">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <div>
+              <h3>Frontend Architecture</h3>
+              <p>User-obsessed, dynamic, lightning-fast UIs</p>
+            </div>
+          </div>
+          <div class="skill-chips">
+            <span class="chip">React.js</span>
+            <span class="chip">Next.js 14 (App/Pages)</span>
+            <span class="chip">JavaScript (ES6+)</span>
+            <span class="chip">Tailwind CSS</span>
+            <span class="chip">HTML5 & Semantic Web</span>
+            <span class="chip">CSS3 Glassmorphism</span>
+            <span class="chip">Progressive Web Apps (PWA)</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-group glass-panel">
+          <div class="skill-group-header">
+            <div class="skill-icon-wrap gold">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <div>
+              <h3>Backend & Microservices</h3>
+              <p>Secure, high-throughput RESTful systems</p>
+            </div>
+          </div>
+          <div class="skill-chips">
+            <span class="chip">Python (FastAPI)</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Express.js</span>
+            <span class="chip">RESTful API Design</span>
+            <span class="chip">Carrier OTP Authentication</span>
+            <span class="chip">Razorpay Payments Escrow</span>
+            <span class="chip">Microservice Architecture</span>
+          </div>
+        </div>
+
+        <!-- Database & Cloud -->
+        <div class="skill-group glass-panel">
+          <div class="skill-group-header">
+            <div class="skill-icon-wrap cyber">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+            </div>
+            <div>
+              <h3>Data & Cloud Infrastructure</h3>
+              <p>Scalable storage, CI/CD and deployment pipelines</p>
+            </div>
+          </div>
+          <div class="skill-chips">
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Supabase</span>
+            <span class="chip">SQL & MySQL</span>
+            <span class="chip">Vercel Production</span>
+            <span class="chip">Render Cloud</span>
+            <span class="chip">Git & GitHub Actions</span>
+            <span class="chip">Postman API Testing</span>
+          </div>
+        </div>
+
+        <!-- AI & Core CS -->
+        <div class="skill-group glass-panel">
+          <div class="skill-group-header">
+            <div class="skill-icon-wrap kisan-green">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </div>
+            <div>
+              <h3>Applied AI & Voice Tech</h3>
+              <p>Sarvam Vernacular AI, algorithms & prompt engineering</p>
+            </div>
+          </div>
+          <div class="skill-chips">
+            <span class="chip">Sarvam AI (Vernacular TTS)</span>
+            <span class="chip">Generative AI</span>
+            <span class="chip">Prompt Engineering</span>
+            <span class="chip">Data Structures & Algo (DSA)</span>
+            <span class="chip">Object-Oriented Programming</span>
+            <span class="chip">Power BI Analytics</span>
+            <span class="chip">C / C++ Fundamentals</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Leadership & Timeline -->
+  <section class="section timeline-section" id="leadership">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Executive Track</span>
+        <h2 class="section-title">Leadership & Strategic Trajectory</h2>
+        <p class="section-subtitle">Venture creation, operational governance, and academic computer science mastery.</p>
+      </div>
+
+      <div class="timeline">
+
+        <!-- Timeline 1: Founder & CEO -->
+        <div class="timeline-item">
+          <div class="timeline-marker kisan-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-badge founder-badge">🌾 Founder & CEO</span>
+                <h3 class="timeline-role">Founder & Chief Technology Officer</h3>
+                <h4 class="timeline-company">Kisan Market (किसान मार्केट)</h4>
+              </div>
+              <span class="timeline-date">2026 – Present</span>
+            </div>
+            <p class="timeline-desc">
+              Spearheading product architecture, commercial partnerships, and engineering execution. Designing a zero-brokerage digital commodity exchange that eliminates rural exploitation and integrates AI-powered vernacular voice services.
+            </p>
+            <div class="timeline-tags">
+              <span>Executive Leadership</span>
+              <span>Next.js 14</span>
+              <span>Python FastAPI</span>
+              <span>Sarvam AI</span>
+              <span>Venture Strategy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline 2: Executive Director SVM Academy -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-badge leadership">Operations Leadership</span>
+                <h3 class="timeline-role">Executive Director</h3>
+                <h4 class="timeline-company">SVM Academy — Khalilabad, Uttar Pradesh</h4>
+              </div>
+              <span class="timeline-date">Present</span>
+            </div>
+            <p class="timeline-desc">
+              Overseeing strategic institutional administration, digital transformation initiatives, and departmental coordination. Headed the complete end-to-end management of Parampara 2026 with multi-stakeholder execution.
+            </p>
+            <div class="timeline-tags">
+              <span>Strategic Governance</span>
+              <span>Institutional Growth</span>
+              <span>Cross-Functional Operations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline 3: Full Stack Developer Obtains -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-badge work">Software Engineering</span>
+                <h3 class="timeline-role">Full Stack Developer</h3>
+                <h4 class="timeline-company">Obtains</h4>
+              </div>
+              <span class="timeline-date">2026-08 – Present</span>
+            </div>
+            <p class="timeline-desc">
+              Engineered scalable web applications using React.js, Next.js, Node.js, and Python FastAPI. Managed production PostgreSQL databases on Supabase and implemented resilient RESTful APIs.
+            </p>
+            <div class="timeline-tags">
+              <span>React.js</span>
+              <span>Node.js</span>
+              <span>FastAPI</span>
+              <span>PostgreSQL</span>
+              <span>Cloud Deployments</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline 3.5: Web Development Intern Thiranex -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-badge work">Industrial Internship</span>
+                <h3 class="timeline-role">Web Development Intern</h3>
+                <h4 class="timeline-company">Thiranex (Skill Development & Future Tech)</h4>
+              </div>
+              <span class="timeline-date">2026-05 – 2026-06</span>
+            </div>
+            <p class="timeline-desc">
+              Completed an intensive industry internship in Web Development under the direct authority of Founder & CEO Hariharan M. Architected responsive client interfaces, modular frontend component structures, and state management workflows.
+            </p>
+            <div class="timeline-tags">
+              <span>Web Development</span>
+              <span>Frontend Engineering</span>
+              <span>Component Architecture</span>
+              <span>Responsive UI</span>
+              <span>MSME Certified</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline 4: Academic Background -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-panel">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-badge education">Higher Education</span>
+                <h3 class="timeline-role">Bachelor of Computer Applications (BCA)</h3>
+                <h4 class="timeline-company">ITM GIDA Gorakhpur — DDU University</h4>
+              </div>
+              <span class="timeline-date">2024 – 2027</span>
+            </div>
+            <p class="timeline-desc">
+              Core academic specializations in Data Structures & Algorithms, Object-Oriented Software Design, Relational Database Management Systems, and Cloud Architectures.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Honors, Awards & Milestones -->
+  <section class="section achievements-section" id="achievements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Accolades</span>
+        <h2 class="section-title">National Recognition & Honors</h2>
+        <p class="section-subtitle">Proven ability to deliver groundbreaking technological innovations under intense competition.</p>
+      </div>
+
+      <div class="achievements-grid">
+        
+        <div class="achievement-card glass-panel kisan-border">
+          <div class="achievement-medal">🐘</div>
+          <div class="achievement-content">
+            <span class="achievement-year">PostgreSQL & Cloud Infrastructure</span>
+            <h3>Enterprise Database & Backend Systems</h3>
+            <p>
+              Architected scalable relational database schemas, Row-Level Security (RLS) policies, and high-performance REST APIs for Kisan Market powered by Supabase PostgreSQL.
+            </p>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-panel">
+          <div class="achievement-medal">🎖️</div>
+          <div class="achievement-content">
+            <span class="achievement-year">Parampara 2026</span>
+            <h3>Event Head & Cultural Director</h3>
+            <p>
+              Spearheaded the planning and operational delivery of ITM GIDA's major college festival, directing 50+ coordinators and managing comprehensive institution schedules.
+            </p>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-panel">
+          <div class="achievement-medal">📜</div>
+          <div class="achievement-content">
+            <span class="achievement-year">PostgreSQL / Supabase</span>
+            <h3>Dynamic Credentials Vault</h3>
+            <p>
+              All professional certificates and executive licenses are cataloged and queried directly from a dedicated PostgreSQL database hosted on Supabase.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 1. DEDICATED VERIFIED INTERNSHIPS & INDUSTRIAL EXPERIENCE SHOWCASE -->
+      <div class="internships-section-wrap" id="internships">
+        <div class="internships-header">
+          <div>
+            <span class="internship-badge-header">💼 WORK EXPERIENCE & INDUSTRIAL IMMERSION</span>
+            <h3 class="section-title" style="font-size: 1.85rem; margin-top: 8px;">Verified Corporate Internships</h3>
+            <p class="section-subtitle" style="margin-bottom: 0;">Formal industry internships and enterprise technical training with certified credentials.</p>
+          </div>
+          <div class="vault-db-meta">
+            <span class="meta-tag">3 Verified Engagements</span>
+            <span class="meta-tag">MSME & Govt. of India Signoffs</span>
+          </div>
+        </div>
+
+        <div class="internships-grid">
+          <!-- Internship 1: Techpile Technology 45 Days Summer Training (Grade A++, Medal Winner) -->
+          <div class="internship-featured-card glass-panel">
+            <div class="internship-top-meta">
+              <span class="internship-pill" style="background: rgba(239, 68, 68, 0.2); color: #f87171; border-color: rgba(239, 68, 68, 0.4);">🥇 OUTSTANDING PERFORMER MEDAL</span>
+              <span class="internship-duration">📅 26 Jul 2026 (45 Days)</span>
+            </div>
+            <h4 class="internship-role">45 Days Summer Training in Data Analytics</h4>
+            <div class="internship-company">Techpile Technology Pvt. Ltd. • Ministry of Corp. Affairs & MSME • Grade "A++"</div>
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-techpile-summer-training.jpg', 'Techpile 45 Days Summer Training in Data Analytics')">
+              <img src="./assets/certificates/cert-techpile-summer-training.jpg" alt="Techpile Summer Training Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Training Certificate</span>
+              </div>
+            </div>
+            <p class="cert-desc">
+              Completed 45 Days intensive Summer Training in Data Analytics with prestigious "A++" Grade. Awarded the Outstanding Performer Summer Training 2026 Medal from ITM GIDA Gorakhpur.
+            </p>
+            <div class="cert-skills">
+              <span>Data Analytics</span>
+              <span>Outstanding Performer Medal</span>
+              <span>Grade A++</span>
+              <span>Python Analytics</span>
+              <span>Govt. of India Registered</span>
+            </div>
+            <div class="internship-signatory">
+              <span>✍️ Authorized by: <strong>Director & Project Manager</strong> (Techpile Technology)</span>
+              <span style="margin-left: auto;" class="cert-id-tag">ID: TechpileST260126</span>
+            </div>
+          </div>
+
+          <!-- Internship 2: Thiranex Web Development -->
+          <div class="internship-featured-card glass-panel">
+            <div class="internship-top-meta">
+              <span class="internship-pill">⚡ OFFICIAL INTERNSHIP</span>
+              <span class="internship-duration">📅 21 May 2026 – 20 Jun 2026</span>
+            </div>
+            <h4 class="internship-role">Web Development Intern</h4>
+            <div class="internship-company">Thiranex (Skill Development & Future Tech) • MSME Certified</div>
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-thiranex-internship.jpg', 'Thiranex Web Development Internship')">
+              <img src="./assets/certificates/cert-thiranex-internship.jpg" alt="Thiranex Internship Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Internship Certificate</span>
+              </div>
+            </div>
+            <p class="cert-desc">
+              Successfully completed an intensive industry internship in Web Development. Executed production-ready frontend architectures, responsive design systems, component state orchestration, and dynamic client experiences.
+            </p>
+            <div class="cert-skills">
+              <span>Web Development</span>
+              <span>Frontend Architecture</span>
+              <span>Component Systems</span>
+              <span>Responsive UI</span>
+              <span>State Management</span>
+            </div>
+            <div class="internship-signatory">
+              <span>✍️ Authorized by: <strong>Hariharan M</strong> (Founder & CEO, Thiranex)</span>
+              <span style="margin-left: auto;" class="cert-id-tag">ID: THX-MAY2226-532</span>
+            </div>
+          </div>
+
+          <!-- Internship 3: DataCulture Technologies Industrial Training -->
+          <div class="internship-featured-card glass-panel">
+            <div class="internship-top-meta">
+              <span class="internship-pill" style="background: rgba(234, 88, 12, 0.2); color: #fb923c; border-color: rgba(234, 88, 12, 0.4);">⚙️ INDUSTRIAL TRAINING</span>
+              <span class="internship-duration">📅 June 2026</span>
+            </div>
+            <h4 class="internship-role">Python Essentials & Application Development</h4>
+            <div class="internship-company">DataCulture Technologies • Industrial Immersion</div>
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-dataculture-python.jpg', 'DataCulture Technologies Python Essentials')">
+              <img src="./assets/certificates/cert-dataculture-python.jpg" alt="DataCulture Python Industrial Training" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Training Certificate</span>
+              </div>
+            </div>
+            <p class="cert-desc">
+              Completed comprehensive industrial training on Python Essentials and Application Development. Mastered practical software programming, modular backend scripting, application architectures, and robust implementation of core concepts.
+            </p>
+            <div class="cert-skills">
+              <span>Python Programming</span>
+              <span>Application Development</span>
+              <span>Practical Scripting</span>
+              <span>Backend Architecture</span>
+              <span>Software Engineering</span>
+            </div>
+            <div class="internship-signatory">
+              <span>✍️ Authorized by: <strong>Priya Singh & Samriti Thakur</strong> (Prog Co-ordinators)</span>
+              <span style="margin-left: auto;" class="cert-id-tag">QR Code Verified</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. COMPLETE CREDENTIALS & CERTIFICATIONS VAULT (STRICT DATE-WISE SEQUENCE) -->
+      <div class="cert-vault-container">
+        <div class="cert-vault-header">
+          <div class="vault-header-left">
+            <span class="db-live-badge">
+              <span class="pulse-indicator"></span>
+              <span>PostgreSQL Cluster: public.certificates (Ordered by issue_date DESC)</span>
+            </span>
+            <h3 class="cert-vault-title">Complete Verified Credentials Vault</h3>
+          </div>
+          <div class="vault-db-meta">
+            <span class="meta-tag">Engine: PostgreSQL 15+</span>
+            <span class="meta-tag">13 Verified Records</span>
+          </div>
+        </div>
+
+        <!-- Interactive Category Filter Bar -->
+        <div class="cert-vault-filter-bar" id="certFilters">
+          <button class="cert-filter-btn active" data-filter="all">🌟 All Verified (13)</button>
+          <button class="cert-filter-btn" data-filter="internship">💼 Internships & Industrial (3)</button>
+          <button class="cert-filter-btn" data-filter="ai">🤖 AI & Data Science (6)</button>
+          <button class="cert-filter-btn" data-filter="engineering">💻 Software & DSA (2)</button>
+          <button class="cert-filter-btn" data-filter="leadership">🏆 Honors & Leadership (3)</button>
+        </div>
+
+        <div class="certificates-grid" id="certificatesGrid">
+
+          <!-- 1. July 26, 2026: Techpile Summer Training in Data Analytics (LATEST) -->
+          <div class="cert-card glass-panel cert-with-media" data-category="internship ai" data-date="2026-07-26">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-techpile-summer-training.jpg', 'Techpile 45 Days Summer Training in Data Analytics')">
+              <img src="./assets/certificates/cert-techpile-summer-training.jpg" alt="Techpile Summer Training Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge techpile">Techpile (MCA / MSME)</span>
+              <span class="cert-date-badge">📅 26 Jul 2026</span>
+            </div>
+            <h4 class="cert-title">45 Days Summer Training in Data Analytics</h4>
+            <p class="cert-desc">Awarded Outstanding Performer Medal with "A++" Grade from ITM GIDA. Certified by Techpile Technology Pvt. Ltd. (Registered with MCA Govt of India, MSME, Skill India, ISO 9001:2015).</p>
+            <div class="cert-skills">
+              <span>Data Analytics</span>
+              <span>Grade A++</span>
+              <span>Medal Winner</span>
+              <span>Python Analytics</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Medal Awarded</span>
+              <span class="cert-id-tag">ID: TechpileST260126</span>
+            </div>
+          </div>
+
+          <!-- 2. June 20, 2026: Thiranex Internship -->
+          <div class="cert-card glass-panel cert-with-media" data-category="internship engineering" data-date="2026-06-20">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-thiranex-internship.jpg', 'Thiranex Web Development Internship')">
+              <img src="./assets/certificates/cert-thiranex-internship.jpg" alt="Thiranex Internship Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge thiranex">Thiranex (MSME)</span>
+              <span class="cert-date-badge">📅 20 Jun 2026</span>
+            </div>
+            <h4 class="cert-title">Web Development Internship</h4>
+            <p class="cert-desc">1-Month intensive corporate internship under Founder & CEO Hariharan M. Built modern responsive web architectures, clean component flows, and performant client interfaces.</p>
+            <div class="cert-skills">
+              <span>Web Development</span>
+              <span>Frontend Architecture</span>
+              <span>Responsive UI</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified by CEO</span>
+              <span class="cert-id-tag">ID: THX-MAY2226-532</span>
+            </div>
+          </div>
+
+          <!-- 2. June 20, 2026: be10x AI Tools -->
+          <div class="cert-card glass-panel cert-with-media" data-category="ai" data-date="2026-06-20">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-be10x-ai-tools.jpg', 'be10x AI Tools and ChatGPT Workshop')">
+              <img src="./assets/certificates/cert-be10x-ai-tools.jpg" alt="be10x AI Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge ai">be10x</span>
+              <span class="cert-date-badge">📅 20 Jun 2026</span>
+            </div>
+            <h4 class="cert-title">AI Tools and ChatGPT Workshop</h4>
+            <p class="cert-desc">Certified by IIT Kharagpur alumni founders. Mastered AI-assisted software debugging, automated workflows in under 10 min, and prompt engineering.</p>
+            <div class="cert-skills">
+              <span>AI Coding & Debugging</span>
+              <span>Prompt Engineering</span>
+              <span>LLM Automation</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified Issuer</span>
+              <span class="cert-id-tag">Aditya Goenka & Kachave</span>
+            </div>
+          </div>
+
+          <!-- 3. June 18, 2026: HP LIFE AI for Business Professionals -->
+          <div class="cert-card glass-panel cert-with-media" data-category="ai" data-date="2026-06-18">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-hp-ai-business.jpg', 'HP LIFE AI for Business Professionals')">
+              <img src="./assets/certificates/cert-hp-ai-business.jpg" alt="HP LIFE AI for Business Professionals Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge hp">HP LIFE | HP Foundation</span>
+              <span class="cert-date-badge">📅 18 Jun 2026</span>
+            </div>
+            <h4 class="cert-title">AI for Business Professionals</h4>
+            <p class="cert-desc">Presented by Michele Malejki, Executive Director, HP Foundation. Specialized qualification in AI business roles, prompt engineering, and ethical AI deployment.</p>
+            <div class="cert-skills">
+              <span>Artificial Intelligence</span>
+              <span>Prompt Crafting</span>
+              <span>Ethical AI</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified HP Director</span>
+              <span class="cert-id-tag">Serial: e68a5c6e-aafd...</span>
+            </div>
+          </div>
+
+          <!-- 4. June 18, 2026: HP LIFE Data Science & Analytics -->
+          <div class="cert-card glass-panel cert-with-media" data-category="ai" data-date="2026-06-18">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-hp-datascience.jpg', 'HP LIFE Data Science & Analytics')">
+              <img src="./assets/certificates/cert-hp-datascience.jpg" alt="HP Data Science Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge hp">HP LIFE | HP Foundation</span>
+              <span class="cert-date-badge">📅 18 Jun 2026</span>
+            </div>
+            <h4 class="cert-title">Data Science & Analytics</h4>
+            <p class="cert-desc">Presented by Michele Malejki, Executive Director, HP Foundation. Rigorous training in data science methodologies, statistical analysis, and decision-making.</p>
+            <div class="cert-skills">
+              <span>Data Science Practices</span>
+              <span>Business Analytics</span>
+              <span>Data-Driven Growth</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified HP Director</span>
+              <span class="cert-id-tag">Serial: cec8c7b4-07e6...</span>
+            </div>
+          </div>
+
+          <!-- 5. June 16, 2026: Simplilearn Personality Development -->
+          <div class="cert-card glass-panel cert-with-media" data-category="leadership" data-date="2026-06-16">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-simplilearn-personality.jpg', 'Simplilearn Personality Development')">
+              <img src="./assets/certificates/cert-simplilearn-personality.jpg" alt="Simplilearn Personality Development Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge simplilearn">Simplilearn | SkillUp</span>
+              <span class="cert-date-badge">📅 16 Jun 2026</span>
+            </div>
+            <h4 class="cert-title">Personality Development Course</h4>
+            <p class="cert-desc">Certified by Krishna Kumar, CEO of Simplilearn. Demonstrated initiative and commitment to high-impact professional communication and executive presence.</p>
+            <div class="cert-skills">
+              <span>Executive Communication</span>
+              <span>Leadership Presence</span>
+              <span>Stakeholder Engagement</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified by CEO</span>
+              <span class="cert-id-tag">Code: 10354640</span>
+            </div>
+          </div>
+
+          <!-- 6. June 10, 2026: DataCulture Python Essentials Industrial Training -->
+          <div class="cert-card glass-panel cert-with-media" data-category="internship engineering" data-date="2026-06-10">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-dataculture-python.jpg', 'DataCulture Technologies Python Essentials')">
+              <img src="./assets/certificates/cert-dataculture-python.jpg" alt="DataCulture Python Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge dataculture">DataCulture Technologies</span>
+              <span class="cert-date-badge">📅 10 Jun 2026</span>
+            </div>
+            <h4 class="cert-title">Python Essentials & Application Development</h4>
+            <p class="cert-desc">Industrial training covering Python core concepts, backend application architecture, practical implementation, and scripting verified by program coordinators.</p>
+            <div class="cert-skills">
+              <span>Python Programming</span>
+              <span>App Development</span>
+              <span>Backend Scripting</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ QR Verified</span>
+              <span class="cert-id-tag">Priya Singh & Samriti</span>
+            </div>
+          </div>
+
+          <!-- 7. May 29, 2026: Deloitte Cyber Job Simulation -->
+          <div class="cert-card glass-panel cert-with-media" data-category="engineering" data-date="2026-05-29">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-deloitte-cyber.jpg', 'Deloitte Cyber Job Simulation')">
+              <img src="./assets/certificates/cert-deloitte-cyber.jpg" alt="Deloitte Cyber Security Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge deloitte">Deloitte.</span>
+              <span class="cert-date-badge">📅 29 May 2026</span>
+            </div>
+            <h4 class="cert-title">Cyber Job Simulation</h4>
+            <p class="cert-desc">Issued by Tina McCreery, Chief Human Resources Officer, Deloitte. Practical tasks in enterprise cyber security defense and vulnerability analysis.</p>
+            <div class="cert-skills">
+              <span>Cyber Security</span>
+              <span>Enterprise Defense</span>
+              <span>Incident Response</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified by Forage</span>
+              <span class="cert-id-tag">Code: TGrPkqPci3uFmRzfe</span>
+            </div>
+          </div>
+
+          <!-- 8. May 29, 2026: Commonwealth Bank Data Science Simulation -->
+          <div class="cert-card glass-panel cert-with-media" data-category="ai" data-date="2026-05-29">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-commbank-datascience.jpg', 'Commonwealth Bank Data Science Simulation')">
+              <img src="./assets/certificates/cert-commbank-datascience.jpg" alt="Commonwealth Bank Data Science Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge bank">Commonwealth Bank</span>
+              <span class="cert-date-badge">📅 29 May 2026</span>
+            </div>
+            <h4 class="cert-title">Introduction to Data Science Job Simulation</h4>
+            <p class="cert-desc">Issued by Tom Brunskill, Co-Founder of Forage for Commonwealth Bank. Relational database design, confidential data anonymisation, and financial pipelines.</p>
+            <div class="cert-skills">
+              <span>Designing a Database</span>
+              <span>Data Aggregation</span>
+              <span>Data Anonymisation</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified by Forage</span>
+              <span class="cert-id-tag">Code: t5asjt85dLAGLTQzr</span>
+            </div>
+          </div>
+
+          <!-- 9. May 28, 2026: Tata GenAI Powered Data Analytics -->
+          <div class="cert-card glass-panel cert-with-media" data-category="ai" data-date="2026-05-28">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-tata-genai.jpg', 'Tata GenAI Powered Data Analytics')">
+              <img src="./assets/certificates/cert-tata-genai.jpg" alt="Tata GenAI Data Analytics Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge tata">Tata / Forage</span>
+              <span class="cert-date-badge">📅 28 May 2026</span>
+            </div>
+            <h4 class="cert-title">GenAI Powered Data Analytics Job Simulation</h4>
+            <p class="cert-desc">Issued by Tom Brunskill, Co-Founder of Forage for Tata. Exploratory data analysis, risk profiling, AI delinquency forecasting, and executive data storytelling.</p>
+            <div class="cert-skills">
+              <span>Exploratory Data Analysis</span>
+              <span>Predicting Delinquency</span>
+              <span>AI Data Strategy</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified by Forage</span>
+              <span class="cert-id-tag">Code: QsLuXSCPrxRsj6hvj</span>
+            </div>
+          </div>
+
+          <!-- 10. May 15, 2026: Apna College Alpha (DSA with Java) -->
+          <div class="cert-card glass-panel cert-with-media" data-category="engineering" data-date="2026-05-15">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-apnacollege-dsa.jpg', 'Apna College Alpha - DSA with Java')">
+              <img src="./assets/certificates/cert-apnacollege-dsa.jpg" alt="Apna College DSA Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge apna">Apna College</span>
+              <span class="cert-date-badge">📅 15 May 2026</span>
+            </div>
+            <h4 class="cert-title">Alpha (DSA with Java)</h4>
+            <p class="cert-desc">Certified by Shradha Khapra, Co-Founder of Apna College. Rigorous completion of Data Structures & Algorithms in Java, algorithmic optimization, and computational problem-solving.</p>
+            <div class="cert-skills">
+              <span>DSA with Java</span>
+              <span>Algorithms & Problem Solving</span>
+              <span>Time Complexity</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified Shradha Khapra</span>
+              <span class="cert-id-tag">ID: 697b690adc6d21...</span>
+            </div>
+          </div>
+
+          <!-- 11. April 15, 2026: ITM Mimicry 2nd Position -->
+          <div class="cert-card glass-panel cert-with-media" data-category="leadership" data-date="2026-04-15">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-itm-mimicry.jpg', 'ITM Parampara 2026 Mimicry Award')">
+              <img src="./assets/certificates/cert-itm-mimicry.jpg" alt="ITM Parampara Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge itm">ITM GIDA Gorakhpur</span>
+              <span class="cert-date-badge">📅 15 Apr 2026</span>
+            </div>
+            <h4 class="cert-title">Parampara 2026 — 2nd Position in Mimicry</h4>
+            <p class="cert-desc">Certificate of Appreciation awarded by Dr. N. K. Singh, Director, ITM GIDA Gorakhpur for stage presentation and securing 2nd position in annual college festival.</p>
+            <div class="cert-skills">
+              <span>Public Speaking</span>
+              <span>Stage Presentation</span>
+              <span>Cultural Excellence</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified Director</span>
+              <span class="cert-id-tag">Dir. Dr. N. K. Singh</span>
+            </div>
+          </div>
+
+          <!-- 13. March 10, 2026: ITM Event Head & Athletics -->
+          <div class="cert-card glass-panel cert-with-media" data-category="leadership" data-date="2026-03-10">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-itm-event-head.jpg', 'ITM Event Head & Athletics Certificate')">
+              <img src="./assets/certificates/cert-itm-event-head.jpg" alt="ITM Event Head Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge itm">ITM GIDA Gorakhpur</span>
+              <span class="cert-date-badge">📅 10 Mar 2026</span>
+            </div>
+            <h4 class="cert-title">Event Head & Athletics Leadership Award</h4>
+            <p class="cert-desc">Certificate of Appreciation awarded by Dr. N. K. Singh, Director, ITM GIDA Gorakhpur in recognition of dedicated leadership as Event Head and athletic governance.</p>
+            <div class="cert-skills">
+              <span>Event Governance</span>
+              <span>Team Leadership</span>
+              <span>Operations</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified Director</span>
+              <span class="cert-id-tag">Dir. Dr. N. K. Singh</span>
+            </div>
+          </div>
+
+          <!-- Live Supabase PostgreSQL Cluster Status -->
+          <div class="cert-card glass-panel add-cert-card">
+            <div class="add-cert-inner">
+              <span class="db-sync-icon">🐘</span>
+              <h4>Supabase PostgreSQL Cluster (13 Credentials)</h4>
+              <p>All 13 verified credentials & internships are indexed and queryable chronologically in PostgreSQL. Secured with Row-Level Security.</p>
+              <div class="schema-hint-pill">13 Rows in public.certificates</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Contact & Venture Inquiries -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="contact-card glass-panel">
+        
+        <div class="contact-info">
+          <span class="section-tag">Executive Inquiries</span>
+          <h2 class="contact-title">Let’s Pioneer the Future of Agriculture</h2>
+          <p class="contact-text">
+            Open to strategic venture partnerships, institutional collaborations, advisory roles, and high-impact software engineering opportunities. Connect directly through the channels below.
+          </p>
+
+          <div class="contact-details">
+            <a href="mailto:pratyushm866@gmail.com" class="contact-item">
+              <div class="contact-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <span class="contact-label">Executive Email</span>
+                <span class="contact-val">pratyushm866@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="tel:+918948164079" class="contact-item">
+              <div class="contact-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <span class="contact-label">Direct Line</span>
+                <span class="contact-val">+91 8948164079</span>
+              </div>
+            </a>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <span class="contact-label">Headquarters / Base</span>
+                <span class="contact-val">Gorakhpur / Sant Kabir Nagar, Uttar Pradesh, India</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-action-buttons">
+            <a href="./assets/Pratyush_Mishra_Resume.pdf" download="Pratyush_Mishra_Resume.pdf" class="btn btn-kisan">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Executive Resume (PDF)</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3 class="form-title">Direct Executive Message</h3>
+          
+          <div class="form-group">
+            <label for="senderName">Your Name / Organization</label>
+            <input type="text" id="senderName" required placeholder="e.g. Rahul Sharma (Venture Partner)">
+          </div>
+
+          <div class="form-group">
+            <label for="senderEmail">Your Email</label>
+            <input type="email" id="senderEmail" required placeholder="contact@organization.com">
+          </div>
+
+          <div class="form-group">
+            <label for="senderSubject">Inquiry Nature</label>
+            <input type="text" id="senderSubject" required placeholder="Partnership / Investment / Engineering Collaboration">
+          </div>
+
+          <div class="form-group">
+            <label for="senderMessage">Message</label>
+            <textarea id="senderMessage" rows="4" required placeholder="Detail your proposition or requirement..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-kisan btn-block">
+            <span>Transmit Message</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#hero" class="nav-brand">
+          <span class="brand-badge-kisan">🌾 KISAN MARKET</span>
+          <span class="brand-name">Pratyush Mishra</span>
+          <span class="brand-title-tag">CEO</span>
+        </a>
+        <p class="footer-tagline">Architecting technological sovereignty and fair digital trade for Indian agriculture.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/pratyush866" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/pratyush-mishra-5ba282373/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:pratyushm866@gmail.com">Executive Email</a>
+        <a href="./assets/Pratyush_Mishra_Resume.pdf" download>Official CV</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Pratyush Mishra • Founder & CEO, Kisan Market • All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Certificate Full Preview Modal -->
+  <div class="cert-modal" id="certModal">
+    <div class="cert-modal-backdrop" onclick="closeCertModal()"></div>
+    <div class="cert-modal-dialog glass-panel">
+      <button class="cert-modal-close" onclick="closeCertModal()" aria-label="Close Preview">&times;</button>
+      <div class="cert-modal-header">
+        <h3 class="cert-modal-title" id="certModalTitle">Certificate of Completion</h3>
+        <span class="cert-modal-tag">🐘 Stored in Supabase PostgreSQL</span>
+      </div>
+      <div class="cert-modal-body">
+        <img src="" alt="Verified Certificate" id="certModalImg" class="cert-full-img">
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
