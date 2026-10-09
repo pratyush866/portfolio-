@@ -10,7 +10,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // =======================================================
-  // 1. KISAN MARKET GOLDEN-EMERALD BIO-FLAME CURSOR ENGINE
+  // 1. LIGHTWEIGHT SUBTLE FIRE EMBER CURSOR ENGINE ("Halka Fire")
   // =======================================================
   const canvas = document.getElementById('fireTrailCanvas');
   const ctx = canvas.getContext('2d');
@@ -24,42 +24,42 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const particles = [];
-  let mouse = { x: width / 2, y: height / 2, moved: false, lastX: width / 2, lastY: height / 2 };
+  let mouse = { x: width / 2, y: height / 2, lastX: width / 2, lastY: height / 2 };
 
-  class KisanBioParticle {
-    constructor(x, y, speedMult = 1) {
-      this.x = x + (Math.random() - 0.5) * 8;
-      this.y = y + (Math.random() - 0.5) * 8;
+  // Delicate, authentic flame spark ember (Warm gold, amber, fire orange)
+  const flameColors = [
+    '#f59e0b', // Gold / Amber
+    '#fbbf24', // Warm Flame
+    '#f97316', // Orange Fire
+    '#ef4444'  // Deep Ember
+  ];
+
+  class FlameSparkParticle {
+    constructor(x, y) {
+      this.x = x + (Math.random() - 0.5) * 6;
+      this.y = y + (Math.random() - 0.5) * 6;
       
-      const angle = Math.random() * Math.PI * 2;
-      const speed = (Math.random() * 2.5 + 0.8) * speedMult;
-      this.vx = Math.cos(angle) * speed * 0.7;
-      this.vy = Math.sin(angle) * speed * 0.7 - (Math.random() * 2.2 + 1.2); // upward buoyancy
+      this.vx = (Math.random() - 0.5) * 0.9;
+      this.vy = -(Math.random() * 1.5 + 0.6); // Soft buoyant upward rise
       
-      this.size = Math.random() * 14 + 7;
+      this.size = Math.random() * 2.8 + 1.6; // Small, delicate spark (2-4px)
       this.initialSize = this.size;
       this.life = 0;
-      this.maxLife = Math.random() * 30 + 22;
-      
-      // Dual Theme: Golden Harvest Wheat (hue ~42) & Emerald Bio-Glow (hue ~150)
-      this.isEmerald = Math.random() > 0.55;
-      this.hue = this.isEmerald 
-        ? Math.random() * 25 + 140  // 140 to 165 (Emerald / Mint green)
-        : Math.random() * 18 + 36;  // 36 to 54 (Golden Wheat / Amber)
+      this.maxLife = Math.random() * 22 + 16; // Quick, graceful fade
+      this.color = flameColors[Math.floor(Math.random() * flameColors.length)];
     }
 
     update() {
       this.x += this.vx;
       this.y += this.vy;
-      
-      this.vy -= 0.07;
-      this.vx *= 0.98;
+      this.vy -= 0.02; // gentle float
+      this.vx *= 0.96;
       
       this.life++;
       const progress = this.life / this.maxLife;
       this.size = this.initialSize * (1 - progress);
       
-      return this.life < this.maxLife && this.size > 0.4;
+      return this.life < this.maxLife && this.size > 0.2;
     }
 
     draw() {
@@ -67,62 +67,47 @@ document.addEventListener('DOMContentLoaded', () => {
       const alpha = Math.max(0, 1 - progress);
       
       ctx.save();
-      ctx.globalCompositeOperation = 'lighter';
-      
-      const radGrad = ctx.createRadialGradient(
-        this.x, this.y, 0,
-        this.x, this.y, Math.max(0.1, this.size)
-      );
-      
-      if (this.isEmerald) {
-        radGrad.addColorStop(0, `hsla(${this.hue}, 100%, 95%, ${alpha})`);
-        radGrad.addColorStop(0.35, `hsla(${this.hue}, 90%, 65%, ${alpha * 0.9})`);
-        radGrad.addColorStop(0.75, `hsla(${this.hue - 15}, 100%, 45%, ${alpha * 0.5})`);
-        radGrad.addColorStop(1, `hsla(160, 100%, 20%, 0)`);
-      } else {
-        radGrad.addColorStop(0, `hsla(${this.hue + 10}, 100%, 96%, ${alpha})`);
-        radGrad.addColorStop(0.35, `hsla(${this.hue}, 100%, 65%, ${alpha * 0.9})`);
-        radGrad.addColorStop(0.75, `hsla(${this.hue - 15}, 100%, 45%, ${alpha * 0.5})`);
-        radGrad.addColorStop(1, `hsla(30, 100%, 20%, 0)`);
-      }
-      
-      ctx.fillStyle = radGrad;
+      ctx.globalAlpha = alpha * 0.85;
+      ctx.fillStyle = this.color;
+      ctx.shadowColor = this.color;
+      ctx.shadowBlur = 4;
       ctx.beginPath();
-      ctx.arc(this.x, this.y, Math.max(0.1, this.size * 1.5), 0, Math.PI * 2);
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fill();
-      
       ctx.restore();
     }
   }
 
-  function createBioEmbers(x, y, count = 4) {
+  function emitFlameSpark(x, y, count = 1) {
     for (let i = 0; i < count; i++) {
-      particles.push(new KisanBioParticle(x, y));
+      if (particles.length < 45) { // Cap particles strictly for 60 FPS
+        particles.push(new FlameSparkParticle(x, y));
+      }
     }
   }
 
+  // Smooth, throttled mouse tracking (Gentle fire trail, never laggy)
   window.addEventListener('mousemove', (e) => {
-    mouse.moved = true;
     const dx = e.clientX - mouse.lastX;
     const dy = e.clientY - mouse.lastY;
     const dist = Math.sqrt(dx * dx + dy * dy);
     
-    const count = Math.min(10, Math.max(2, Math.floor(dist / 6)));
-    createBioEmbers(e.clientX, e.clientY, count);
-    
-    mouse.lastX = e.clientX;
-    mouse.lastY = e.clientY;
+    if (dist > 8) { // Only emit when mouse actually moves
+      emitFlameSpark(e.clientX, e.clientY, 1);
+      mouse.lastX = e.clientX;
+      mouse.lastY = e.clientY;
+    }
     mouse.x = e.clientX;
     mouse.y = e.clientY;
-  });
+  }, { passive: true });
 
   window.addEventListener('touchmove', (e) => {
     if (e.touches.length > 0) {
-      createBioEmbers(e.touches[0].clientX, e.touches[0].clientY, 4);
+      emitFlameSpark(e.touches[0].clientX, e.touches[0].clientY, 1);
     }
   }, { passive: true });
 
-  function renderBioFire() {
+  function renderFlameCursor() {
     ctx.clearRect(0, 0, width, height);
 
     for (let i = particles.length - 1; i >= 0; i--) {
@@ -134,9 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    requestAnimationFrame(renderBioFire);
+    requestAnimationFrame(renderFlameCursor);
   }
-  renderBioFire();
+  renderFlameCursor();
 
 
   // =======================================================
@@ -200,11 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // =======================================================
-  // 3. AI EXECUTIVE VOICE BRIEFING ENGINE (Web Speech API)
+  // 3. AI EXECUTIVE VOICE ENGINE (Indian English Speech Synthesis)
   // =======================================================
   const voiceTriggerBtn = document.getElementById('voiceTriggerBtn');
   const voicePlayBtn = document.getElementById('voicePlayBtn');
-  const voiceBtnText = document.getElementById('voiceBtnText');
   const voiceStatusText = document.getElementById('voiceStatusText');
   const voiceCard = document.getElementById('voiceCard');
   const playIcon = document.getElementById('playIcon');
@@ -213,25 +197,47 @@ document.addEventListener('DOMContentLoaded', () => {
   let isSpeaking = false;
   let synth = window.speechSynthesis;
   let executiveUtterance = null;
+  let availableVoices = [];
+
+  function loadVoices() {
+    if (!synth) return;
+    availableVoices = synth.getVoices() || [];
+  }
+  loadVoices();
+  if (synth && synth.onvoiceschanged !== undefined) {
+    synth.onvoiceschanged = loadVoices;
+  }
 
   const executiveSpeechText = 
-    "Greetings. I am Pratyush Mishra, Founder and Chief Executive Officer of Kisan Market. " +
-    "We are transforming Indian agriculture through a zero-brokerage digital commodity exchange, " +
-    "integrated with Sarvam AI vernacular voice assistance to empower rural farmers across Bharat. " +
-    "Welcome to my official executive space.";
+    "Namaste and welcome. I am Pratyush Mishra, Founder and Chief Executive Officer of Kisan Market, based in Khalilabad, Sant Kabir Nagar. " +
+    "I architect sovereign technology platforms including Kisan Market, Shaadi Ram Ghar Jode, and Travel Market — empowering farmers, families, and drivers across India through transparent zero brokerage digital trade. " +
+    "Thank you for visiting my official portfolio.";
 
   function getExecutiveVoice() {
-    if (!synth) return null;
-    const voices = synth.getVoices();
-    const preferredVoices = voices.filter(v => 
-      v.lang.includes('en-IN') || 
-      v.name.includes('Natural') || 
-      v.name.includes('Google UK English Male') || 
-      v.name.includes('David') || 
-      v.name.includes('George') ||
-      v.lang.startsWith('en')
-    );
-    return preferredVoices[0] || voices[0] || null;
+    if (!availableVoices || availableVoices.length === 0) {
+      loadVoices();
+    }
+    const voices = availableVoices;
+    if (!voices || voices.length === 0) return null;
+
+    // Priority 1: Indian English (en-IN)
+    const indianEnglish = voices.find(v => {
+      const lang = (v.lang || '').toLowerCase().replace('_', '-');
+      const name = (v.name || '').toLowerCase();
+      return lang === 'en-in' || name.includes('india') || name.includes('ravi') || name.includes('heera') || name.includes('neerja');
+    });
+    if (indianEnglish) return indianEnglish;
+
+    // Priority 2: Natural or UK English
+    const naturalVoice = voices.find(v => {
+      const name = (v.name || '').toLowerCase();
+      return name.includes('natural') || name.includes('google uk english male');
+    });
+    if (naturalVoice) return naturalVoice;
+
+    // Priority 3: Any English
+    const anyEnglish = voices.find(v => (v.lang || '').toLowerCase().startsWith('en'));
+    return anyEnglish || voices[0] || null;
   }
 
   function startVoiceBriefing() {
@@ -250,14 +256,14 @@ document.addEventListener('DOMContentLoaded', () => {
       executiveUtterance.voice = chosenVoice;
     }
 
-    executiveUtterance.rate = 0.95;
-    executiveUtterance.pitch = 1.0;
+    executiveUtterance.rate = 0.92;   // Natural, calm executive pacing
+    executiveUtterance.pitch = 1.02;  // Natural tone
     executiveUtterance.volume = 1.0;
 
     executiveUtterance.onstart = () => {
       isSpeaking = true;
       updateVoiceUI(true);
-      showToast("🎙️ Playing Kisan Market Founder Statement...");
+      showToast("🎙️ Playing Founder Statement (Indian English)...");
     };
 
     executiveUtterance.onend = () => {
@@ -415,25 +421,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // =======================================================
-  // 7. 3D GYROSCOPE TILT ON FOUNDER CARD
-  // =======================================================
+  // 7. ROCK-SOLID STATIC FOUNDER CARD (No Disorienting Tilt or Spin)
   const profileCard = document.getElementById('profileCard');
-  if (profileCard && window.innerWidth > 992) {
-    profileCard.addEventListener('mousemove', (e) => {
-      const rect = profileCard.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = ((y - centerY) / centerY) * -14;
-      const rotateY = ((x - centerX) / centerX) * 14;
+  if (profileCard) {
+    profileCard.style.transform = 'none'; // Keep rock solid and stable
+  }
 
-      profileCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
-    });
-
-    profileCard.addEventListener('mouseleave', () => {
-      profileCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+  // Back to Top smooth scroll
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
