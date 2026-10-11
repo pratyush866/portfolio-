@@ -79,8 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function emitFlameSpark(x, y, count = 1) {
+    const maxParticles = window.innerWidth < 768 ? 16 : 42;
     for (let i = 0; i < count; i++) {
-      if (particles.length < 45) { // Cap particles strictly for 60 FPS
+      if (particles.length < maxParticles) { // Cap particles strictly for 60 FPS
         particles.push(new FlameSparkParticle(x, y));
       }
     }
@@ -101,8 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
     mouse.y = e.clientY;
   }, { passive: true });
 
+  let lastTouchEmit = 0;
   window.addEventListener('touchmove', (e) => {
-    if (e.touches.length > 0) {
+    const now = performance.now();
+    if (now - lastTouchEmit > 40 && e.touches.length > 0) {
+      lastTouchEmit = now;
       emitFlameSpark(e.touches[0].clientX, e.touches[0].clientY, 1);
     }
   }, { passive: true });
@@ -185,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // =======================================================
-  // 3. AI EXECUTIVE VOICE ENGINE (Indian English Speech Synthesis)
+  // 3. AI EXECUTIVE VOICE ENGINE (Executive Male Speech Synthesis)
   // =======================================================
   const voiceTriggerBtn = document.getElementById('voiceTriggerBtn');
   const voicePlayBtn = document.getElementById('voicePlayBtn');
@@ -193,51 +197,85 @@ document.addEventListener('DOMContentLoaded', () => {
   const voiceCard = document.getElementById('voiceCard');
   const playIcon = document.getElementById('playIcon');
   const pauseIcon = document.getElementById('pauseIcon');
+  const voiceBtnText = document.getElementById('voiceBtnText');
 
   let isSpeaking = false;
   let synth = window.speechSynthesis;
   let executiveUtterance = null;
   let availableVoices = [];
+  let voiceKeepAliveTimer = null;
 
   function loadVoices() {
     if (!synth) return;
     availableVoices = synth.getVoices() || [];
   }
   loadVoices();
-  if (synth && synth.onvoiceschanged !== undefined) {
+  if (synth) {
     synth.onvoiceschanged = loadVoices;
   }
 
+  // Refined executive speech: natural pauses, clear diction, and dignified cadence
   const executiveSpeechText = 
-    "Namaste and welcome. I am Pratyush Mishra, Founder and Chief Executive Officer of Kisan Market, based in Khalilabad, Sant Kabir Nagar. " +
-    "I architect sovereign technology platforms including Kisan Market, Shaadi Ram Ghar Jode, and Travel Market — empowering farmers, families, and drivers across India through transparent zero brokerage digital trade. " +
-    "Thank you for visiting my official portfolio.";
+    "Namaste, and welcome. " +
+    "I am Pratyush Mishra, Founder and C.E.O. of Kisan Market. " +
+    "As a software architect and technology entrepreneur from Uttar Pradesh, I build transparent digital platforms that empower farmers, families, and local commerce with zero brokerage. " +
+    "Thank you for exploring my official executive portfolio.";
 
-  function getExecutiveVoice() {
+  // Explicitly identify and filter out all female voices
+  function isFemaleVoice(voice) {
+    if (!voice) return false;
+    const name = (voice.name || '').toLowerCase();
+    const femaleKeywords = [
+      'female', 'woman', 'girl',
+      'heera', 'neerja', 'zira', 'susan', 'hazel', 'catherine',
+      'jenny', 'aria', 'eva', 'sara', 'swara', 'kalpana', 'ananya',
+      'priya', 'aditi', 'kavya', 'samantha', 'victoria', 'karen',
+      'linda', 'serena', 'yuna', 'ayumi', 'haruka', 'amelie',
+      'anna', 'helena', 'laura', 'maria', 'paulina', 'clara',
+      'elsa', 'fiona', 'moira', 'tessa', 'veena'
+    ];
+    return femaleKeywords.some(keyword => name.includes(keyword));
+  }
+
+  function getExecutiveMaleVoice() {
     if (!availableVoices || availableVoices.length === 0) {
       loadVoices();
     }
     const voices = availableVoices;
     if (!voices || voices.length === 0) return null;
 
-    // Priority 1: Indian English (en-IN)
-    const indianEnglish = voices.find(v => {
+    // Filter out all female voices
+    const nonFemaleVoices = voices.filter(v => !isFemaleVoice(v));
+    const candidateList = nonFemaleVoices.length > 0 ? nonFemaleVoices : voices;
+
+    // Priority 1: Indian English Male (e.g. Microsoft Ravi, Prabhat, Madhur, Namit, Karan, etc.)
+    const indianMale = candidateList.find(v => {
+      const name = (v.name || '').toLowerCase();
       const lang = (v.lang || '').toLowerCase().replace('_', '-');
-      const name = (v.name || '').toLowerCase();
-      return lang === 'en-in' || name.includes('india') || name.includes('ravi') || name.includes('heera') || name.includes('neerja');
+      const isIndian = lang === 'en-in' || name.includes('india') || name.includes('hindi');
+      const isNamedMale = name.includes('ravi') || name.includes('prabhat') || name.includes('madhur') || name.includes('namit') || name.includes('male');
+      return isIndian && (isNamedMale || !isFemaleVoice(v));
     });
-    if (indianEnglish) return indianEnglish;
+    if (indianMale) return indianMale;
 
-    // Priority 2: Natural or UK English
-    const naturalVoice = voices.find(v => {
+    // Priority 2: High-Quality English Male (UK / US / Natural)
+    const specificMale = candidateList.find(v => {
       const name = (v.name || '').toLowerCase();
-      return name.includes('natural') || name.includes('google uk english male');
+      return name.includes('uk english male') ||
+             name.includes('david') ||
+             name.includes('george') ||
+             name.includes('mark') ||
+             name.includes('james') ||
+             name.includes('ryan') ||
+             name.includes('guy') ||
+             name.includes('eric') ||
+             name.includes('male');
     });
-    if (naturalVoice) return naturalVoice;
+    if (specificMale) return specificMale;
 
-    // Priority 3: Any English
-    const anyEnglish = voices.find(v => (v.lang || '').toLowerCase().startsWith('en'));
-    return anyEnglish || voices[0] || null;
+    // Priority 3: Any English non-female voice
+    const anyEnglishMale = candidateList.find(v => (v.lang || '').toLowerCase().startsWith('en'));
+    return anyEnglishMale || candidateList[0] || null;
   }
 
   function startVoiceBriefing() {
@@ -249,30 +287,50 @@ document.addEventListener('DOMContentLoaded', () => {
     if (synth.speaking) {
       synth.cancel();
     }
+    if (voiceKeepAliveTimer) {
+      clearInterval(voiceKeepAliveTimer);
+      voiceKeepAliveTimer = null;
+    }
 
     executiveUtterance = new SpeechSynthesisUtterance(executiveSpeechText);
-    const chosenVoice = getExecutiveVoice();
+    const chosenVoice = getExecutiveMaleVoice();
     if (chosenVoice) {
       executiveUtterance.voice = chosenVoice;
     }
 
-    executiveUtterance.rate = 0.92;   // Natural, calm executive pacing
-    executiveUtterance.pitch = 1.02;  // Natural tone
+    // Authoritative, calm, masculine executive voice tuning:
+    // pitch 0.88 gives a deeper, natural masculine tone instead of high-pitch feminine
+    executiveUtterance.pitch = 0.88;
+    // rate 0.92 gives composed, articulate, respectful delivery without rushing
+    executiveUtterance.rate = 0.92;
     executiveUtterance.volume = 1.0;
 
     executiveUtterance.onstart = () => {
       isSpeaking = true;
       updateVoiceUI(true);
-      showToast("🎙️ Playing Founder Statement (Indian English)...");
+      const voiceName = chosenVoice ? chosenVoice.name.split(' - ')[0] : 'Executive Male Voice';
+      showToast(`🎙️ Playing Founder Statement (${voiceName})...`);
+
+      // Chrome keep-alive safeguard
+      voiceKeepAliveTimer = setInterval(() => {
+        if (!synth.speaking) {
+          clearInterval(voiceKeepAliveTimer);
+        } else {
+          synth.pause();
+          synth.resume();
+        }
+      }, 9000);
     };
 
     executiveUtterance.onend = () => {
       isSpeaking = false;
+      if (voiceKeepAliveTimer) clearInterval(voiceKeepAliveTimer);
       updateVoiceUI(false);
     };
 
     executiveUtterance.onerror = () => {
       isSpeaking = false;
+      if (voiceKeepAliveTimer) clearInterval(voiceKeepAliveTimer);
       updateVoiceUI(false);
     };
 
@@ -280,6 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function stopVoiceBriefing() {
+    if (voiceKeepAliveTimer) {
+      clearInterval(voiceKeepAliveTimer);
+      voiceKeepAliveTimer = null;
+    }
     if (synth && synth.speaking) {
       synth.cancel();
     }
@@ -298,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateVoiceUI(speaking) {
     if (speaking) {
       if (voiceBtnText) voiceBtnText.textContent = "Briefing Active...";
-      if (voiceStatusText) voiceStatusText.textContent = "AI Executive voice active — Speaking now...";
+      if (voiceStatusText) voiceStatusText.textContent = "Executive Male AI Voice speaking...";
       if (voiceTriggerBtn) voiceTriggerBtn.classList.add('playing');
       if (voiceCard) voiceCard.classList.add('speaking');
       if (playIcon) playIcon.classList.add('hidden');
@@ -315,10 +377,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (voiceTriggerBtn) voiceTriggerBtn.addEventListener('click', toggleVoiceBriefing);
   if (voicePlayBtn) voicePlayBtn.addEventListener('click', toggleVoiceBriefing);
-
-  if (synth && synth.onvoiceschanged !== undefined) {
-    synth.onvoiceschanged = getExecutiveVoice;
-  }
 
 
   // =======================================================
