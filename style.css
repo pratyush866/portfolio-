@@ -642,27 +642,57 @@ body {
 /* Voice Player Card */
 .voice-card-interactive {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(14, 23, 31, 0.85);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  flex-direction: column;
+  background: rgba(14, 23, 31, 0.9);
+  border: 1px solid rgba(16, 185, 129, 0.35);
   border-radius: var(--radius-md);
-  padding: 14px 20px;
+  padding: 16px 20px;
   margin-bottom: 32px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65), 0 0 20px rgba(16, 185, 129, 0.12);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.voice-card-interactive:hover {
+  border-color: rgba(16, 185, 129, 0.55);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75), 0 0 25px rgba(16, 185, 129, 0.2);
+}
+
+.voice-card-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
 }
 
 .voice-card-left {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.voice-text-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.voice-card-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .ai-avatar-pulse {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: rgba(16, 185, 129, 0.15);
   border: 1px solid var(--kisan-emerald);
@@ -670,6 +700,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  flex-shrink: 0;
 }
 
 .ai-dot {
@@ -678,30 +709,90 @@ body {
   background: var(--kisan-wheat);
   border-radius: 50%;
   box-shadow: 0 0 12px var(--kisan-emerald);
+  transition: opacity 0.2s ease;
+}
+
+/* Sound Wave Bars when speaking */
+.ai-sound-waves {
+  display: none;
+  align-items: center;
+  gap: 3px;
+  height: 20px;
+}
+
+.ai-sound-waves i {
+  display: inline-block;
+  width: 3px;
+  height: 6px;
+  background: var(--kisan-wheat);
+  border-radius: 2px;
+  transition: height 0.15s ease;
 }
 
 .voice-card-interactive.speaking .ai-dot {
-  animation: pulseAi 1s infinite alternate;
+  display: none;
 }
 
-@keyframes pulseAi {
-  0% { transform: scale(1); filter: brightness(1); }
-  100% { transform: scale(1.4); filter: brightness(1.6); }
+.voice-card-interactive.speaking .ai-sound-waves {
+  display: inline-flex;
+}
+
+.voice-card-interactive.speaking .ai-sound-waves i:nth-child(1) {
+  animation: waveDance 0.8s infinite ease-in-out;
+}
+.voice-card-interactive.speaking .ai-sound-waves i:nth-child(2) {
+  animation: waveDance 0.8s infinite ease-in-out 0.2s;
+}
+.voice-card-interactive.speaking .ai-sound-waves i:nth-child(3) {
+  animation: waveDance 0.8s infinite ease-in-out 0.4s;
+}
+.voice-card-interactive.speaking .ai-sound-waves i:nth-child(4) {
+  animation: waveDance 0.8s infinite ease-in-out 0.1s;
+}
+
+@keyframes waveDance {
+  0%, 100% { height: 4px; }
+  50% { height: 20px; background: var(--kisan-emerald-light); }
 }
 
 .voice-card-label {
-  display: block;
+  display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--kisan-emerald-light);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
+}
+
+.voice-gender-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  padding: 1px 7px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #10b981;
 }
 
 .voice-card-desc {
   font-size: 0.86rem;
   color: var(--text-muted);
-  margin-top: 2px;
+  margin-top: 3px;
+  line-height: 1.4;
+  white-space: normal;
 }
 
 .voice-play-control {
@@ -717,11 +808,63 @@ body {
   cursor: pointer;
   box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
   transition: var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .voice-play-control:hover {
   transform: scale(1.08);
   box-shadow: 0 0 25px rgba(16, 185, 129, 0.7);
+}
+
+/* Quick Dialects Toolbar */
+.voice-dialects-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dialect-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dialect-buttons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.dialect-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dialect-pill:hover {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #ffffff;
+}
+
+.dialect-pill.active {
+  background: rgba(16, 185, 129, 0.22);
+  border-color: var(--kisan-emerald);
+  color: var(--kisan-wheat);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
 }
 
 .hero-cta {
@@ -3205,21 +3348,80 @@ body {
     height: 36px;
   }
 
-  /* Hero Section */
+  /* Hero Section on Mobile */
   .hero-section {
-    padding-top: 96px !important;
+    padding-top: 88px !important;
     padding-bottom: 35px !important;
   }
 
   .hero-container {
-    gap: 32px;
-    margin-bottom: 36px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+    margin-bottom: 32px !important;
+  }
+
+  /* Executive Portrait Centerpiece at Top of Mobile View */
+  .hero-image-wrapper {
+    order: -1 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 auto 58px auto !important; /* Safe 58px clearance for mode selector pills */
+  }
+
+  .profile-card-3d {
+    width: min(305px, 86vw) !important;
+    max-width: 100% !important;
+    aspect-ratio: 1 / 1.18 !important;
+    margin: 0 auto !important;
+    position: relative !important;
+  }
+
+  .photo-switch-prompt {
+    font-size: 0.68rem;
+    padding: 5px 12px;
+    white-space: nowrap;
+  }
+
+  .founder-glass-tag {
+    font-size: 0.68rem;
+    padding: 8px 10px;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+  }
+
+  .photo-mode-selector {
+    position: absolute !important;
+    bottom: -44px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    gap: 8px !important;
+    z-index: 5 !important;
+    white-space: nowrap !important;
+  }
+
+  .mode-pill {
+    padding: 5px 12px;
+    font-size: 0.72rem;
+  }
+
+  .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
   }
 
   .kisan-pill {
     padding: 5px 14px;
     font-size: 0.8rem;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .hero-title {
@@ -3232,18 +3434,24 @@ body {
     min-height: 48px;
     font-size: clamp(0.96rem, 3.8vw, 1.25rem) !important;
     margin-bottom: 18px;
+    justify-content: center;
   }
 
   .hero-bio {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 22px;
+    max-width: 580px;
+    text-align: center;
   }
 
   .voice-card-interactive {
-    padding: 12px 14px;
+    padding: 14px 16px;
     margin-bottom: 22px;
     width: 100%;
+    max-width: 520px;
+    text-align: left;
+    border-radius: 16px;
   }
 
   .voice-card-label {
@@ -3255,8 +3463,8 @@ body {
   }
 
   .voice-play-control {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
   }
 
@@ -3264,6 +3472,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 520px;
     gap: 12px;
     margin-bottom: 24px;
   }
@@ -3291,43 +3500,13 @@ body {
     font-size: 0.84rem;
   }
 
-  /* Profile Card on Mobile */
-  .profile-card-3d {
-    width: 320px;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .photo-switch-prompt {
-    font-size: 0.68rem;
-    padding: 5px 12px;
-    white-space: nowrap;
-  }
-
-  .founder-glass-tag {
-    font-size: 0.68rem;
-    padding: 8px 10px;
-    bottom: 12px;
-    left: 12px;
-    right: 12px;
-  }
-
-  .photo-mode-selector {
-    bottom: -44px;
-    gap: 8px;
-  }
-
-  .mode-pill {
-    padding: 5px 12px;
-    font-size: 0.72rem;
-  }
-
   /* Stat Bar */
   .stat-bar {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 16px;
-    padding: 22px 16px;
+    padding: 26px 16px;
     border-radius: var(--radius-md);
+    margin-top: 10px;
   }
 
   .stat-number {
@@ -3668,11 +3847,38 @@ body {
   }
 
   .profile-card-3d {
-    width: 290px;
+    width: min(285px, 88vw) !important;
+  }
+
+  .photo-mode-selector {
+    bottom: -40px !important;
+    gap: 6px !important;
+  }
+
+  .mode-pill {
+    padding: 4px 9px !important;
+    font-size: 0.68rem !important;
   }
 
   .hero-title {
     font-size: 2.05rem !important;
+  }
+
+  .voice-card-interactive {
+    padding: 12px !important;
+  }
+
+  .dialect-buttons {
+    gap: 4px !important;
+  }
+
+  .dialect-pill {
+    font-size: 0.68rem !important;
+    padding: 2px 7px !important;
+  }
+
+  .voice-gender-pill {
+    font-size: 0.62rem !important;
   }
 }
 

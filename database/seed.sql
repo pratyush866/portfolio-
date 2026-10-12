@@ -256,10 +256,28 @@ INSERT INTO public.certificates (
     'Certificate of Appreciation awarded by Dr. N. K. Singh, Director, ITM GIDA Gorakhpur in recognition of leadership as Event Head and campus athletic participation.',
     true,
     false
+),
+
+-- 14. Samsung Innovation Campus Certificate of Completion — Big Data (15 October 2025)
+(
+    'Samsung Innovation Campus — Big Data',
+    'Samsung Southwest Asia & ESSCI',
+    'Big Data & AI Engineering',
+    '2025-10-15',
+    '2025-10-15',
+    '11/08/2025 – 15/10/2025 (2+ Months Intensive)',
+    false,
+    'SIC08752',
+    'https://www.samsung.com/in/microsite/sic/',
+    './assets/certificates/cert-samsung-bigdata.png',
+    ARRAY['Big Data Analytics', 'Distributed Systems', 'Samsung Innovation Campus', 'ESSCI Certified', 'Predictive Modeling', 'Data Pipelines'],
+    'Certified by Shubham Mukherjee (Head - CSR & Corporate Communications, Samsung Southwest Asia) and Vinod Sharma (Chairman, ESSCI - Electronics Sector Skills Council of India). Successfully completed the specialized course of Samsung Innovation Campus in Big Data from 11/08/2025 to 15/10/2025.',
+    true,
+    true
 );
 
 -- ====================================================================
--- SUCCESS: All 12 verified credentials & internships inserted.
+-- SUCCESS: All 14 verified credentials & internships inserted.
 -- Query chronological order using: SELECT * FROM public.v_certificates_chronological;
 -- Query internships using: SELECT * FROM public.v_internships_chronological;
 -- ====================================================================

@@ -1,5 +1,5 @@
 // ====================================================================
--- PRATYUSH MISHRA - SUPABASE POSTGRESQL CLIENT CONNECTOR
+// PRATYUSH MISHRA - SUPABASE POSTGRESQL CLIENT CONNECTOR
 // Connects to your live Supabase project to fetch verified credentials & internships
 // ====================================================================
 

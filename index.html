@@ -541,21 +541,42 @@
           Technologist, AgriTech Pioneer, and Full-Stack Architect. Revolutionizing Indian agriculture with sovereign zero-brokerage digital trade, <strong>Sarvam AI Vernacular Voice</strong>, and high-concurrency microservices powered by <strong>Next.js 14 and Python FastAPI</strong>.
         </p>
 
-        <!-- Executive Voice Player Card -->
+        <!-- Executive Voice Player Card (Verified Male AI Voice Engine) -->
         <div class="voice-card-interactive" id="voiceCard">
-          <div class="voice-card-left">
-            <div class="ai-avatar-pulse">
-              <span class="ai-dot"></span>
+          <div class="voice-card-header-row">
+            <div class="voice-card-left">
+              <div class="ai-avatar-pulse">
+                <span class="ai-dot"></span>
+                <span class="ai-sound-waves" id="voiceWaveIndicator">
+                  <i></i><i></i><i></i><i></i>
+                </span>
+              </div>
+              <div class="voice-text-group">
+                <div class="voice-card-meta-row">
+                  <span class="voice-card-label">EXECUTIVE AUDIO BRIEFING • AI VOICE</span>
+                  <span class="voice-gender-pill" id="voiceGenderBadge">
+                    <span class="badge-dot"></span>
+                    <span id="voiceBadgeText">Executive Male Voice</span>
+                  </span>
+                </div>
+                <p class="voice-card-desc" id="voiceStatusText">Tap play to listen to Founder Pratyush's official statement</p>
+              </div>
             </div>
-            <div>
-              <span class="voice-card-label">EXECUTIVE AUDIO BRIEFING • AI VOICE</span>
-              <p class="voice-card-desc" id="voiceStatusText">Tap play to listen to Founder Pratyush's mission statement</p>
+            <button class="voice-play-control" id="voicePlayBtn" aria-label="Play Founder Speech (Executive Male Voice)" title="Play / Pause Executive Voice">
+              <svg id="playIcon" class="icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <svg id="pauseIcon" class="icon hidden" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+            </button>
+          </div>
+
+          <!-- Quick Male Dialect Selector -->
+          <div class="voice-dialects-row">
+            <span class="dialect-label">Male Accent:</span>
+            <div class="dialect-buttons" id="voiceDialectBtns">
+              <button type="button" class="dialect-pill active" data-accent="indian" title="Indian English Male Voice (Microsoft Ravi / Rishi)">🇮🇳 Indian Male</button>
+              <button type="button" class="dialect-pill" data-accent="british" title="British Executive Male Voice (Google UK / George)">🇬🇧 UK Executive</button>
+              <button type="button" class="dialect-pill" data-accent="us" title="American Professional Male Voice (David / Guy)">🇺🇸 US Executive</button>
             </div>
           </div>
-          <button class="voice-play-control" id="voicePlayBtn" aria-label="Play Founder Speech">
-            <svg id="playIcon" class="icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-            <svg id="pauseIcon" class="icon hidden" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
-          </button>
         </div>
 
         <div class="hero-cta">
@@ -636,7 +657,7 @@
         <div class="stat-divider"></div>
         <div class="stat-item">
           <div class="stat-number-wrap">
-            <span class="stat-number" data-target="13">0</span><span class="stat-plus">+</span>
+            <span class="stat-number" data-target="14">0</span><span class="stat-plus">+</span>
           </div>
           <span class="stat-label">Verified Credentials & Internships</span>
         </div>
@@ -2036,15 +2057,15 @@
           </div>
           <div class="vault-db-meta">
             <span class="meta-tag">Engine: PostgreSQL 15+</span>
-            <span class="meta-tag">13 Verified Records</span>
+            <span class="meta-tag">14 Verified Records</span>
           </div>
         </div>
 
         <!-- Interactive Category Filter Bar -->
         <div class="cert-vault-filter-bar" id="certFilters">
-          <button class="cert-filter-btn active" data-filter="all">🌟 All Verified (13)</button>
+          <button class="cert-filter-btn active" data-filter="all">🌟 All Verified (14)</button>
           <button class="cert-filter-btn" data-filter="internship">💼 Internships & Industrial (3)</button>
-          <button class="cert-filter-btn" data-filter="ai">🤖 AI & Data Science (6)</button>
+          <button class="cert-filter-btn" data-filter="ai">🤖 AI & Data Science (7)</button>
           <button class="cert-filter-btn" data-filter="engineering">💻 Software & DSA (2)</button>
           <button class="cert-filter-btn" data-filter="leadership">🏆 Honors & Leadership (3)</button>
         </div>
@@ -2377,13 +2398,39 @@
             </div>
           </div>
 
+          <!-- 14. October 15, 2025: Samsung Innovation Campus - Big Data -->
+          <div class="cert-card glass-panel cert-with-media" data-category="ai" data-date="2025-10-15">
+            <div class="cert-card-media" onclick="openCertModal('./assets/certificates/cert-samsung-bigdata.png', 'Samsung Innovation Campus — Big Data Certificate')">
+              <img src="./assets/certificates/cert-samsung-bigdata.png" alt="Samsung Innovation Campus Big Data Certificate" class="cert-thumb">
+              <div class="cert-media-overlay">
+                <span>🔍 Click to View Full Certificate</span>
+              </div>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-issuer-badge samsung" style="background: rgba(20, 40, 160, 0.22); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.45);">Samsung &amp; ESSCI</span>
+              <span class="cert-date-badge">📅 15 Oct 2025</span>
+            </div>
+            <h4 class="cert-title">Samsung Innovation Campus — Big Data</h4>
+            <p class="cert-desc">Certified by Shubham Mukherjee (Head - CSR &amp; Corporate Communications, Samsung Southwest Asia) &amp; Vinod Sharma (Chairman, ESSCI). Intensive mastery in Big Data architectures, distributed data pipelines, and predictive analytics.</p>
+            <div class="cert-skills">
+              <span>Big Data Analytics</span>
+              <span>Samsung Innovation</span>
+              <span>ESSCI Certified</span>
+              <span>Data Engineering</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-verified-pill">✓ Verified by Samsung</span>
+              <span class="cert-id-tag">ID: SIC08752</span>
+            </div>
+          </div>
+
           <!-- Live Supabase PostgreSQL Cluster Status -->
           <div class="cert-card glass-panel add-cert-card">
             <div class="add-cert-inner">
               <span class="db-sync-icon">🐘</span>
-              <h4>Supabase PostgreSQL Cluster (13 Credentials)</h4>
-              <p>All 13 verified credentials & internships are indexed and queryable chronologically in PostgreSQL. Secured with Row-Level Security.</p>
-              <div class="schema-hint-pill">13 Rows in public.certificates</div>
+              <h4>Supabase PostgreSQL Cluster (14 Credentials)</h4>
+              <p>All 14 verified credentials & internships are indexed and queryable chronologically in PostgreSQL. Secured with Row-Level Security.</p>
+              <div class="schema-hint-pill">14 Rows in public.certificates</div>
             </div>
           </div>
 
@@ -2530,7 +2577,7 @@
             <li><a href="#about">Executive Vision</a></li>
             <li><a href="#projects">Ventures &amp; Tech Stack</a></li>
             <li><a href="#internships">Industrial Internships</a></li>
-            <li><a href="#achievements">13 Verified Credentials</a></li>
+            <li><a href="#achievements">14 Verified Credentials</a></li>
             <li><a href="#contact">Direct Contact</a></li>
           </ul>
         </div>
